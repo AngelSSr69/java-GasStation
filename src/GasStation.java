@@ -25,14 +25,14 @@ public class GasStation {
         }
     }
 
-    public static double getGallons(double money, double price) {
-        if (money > 0) {
-            return money / price;
-        } else {
-            System.err.println("Money must be greater than 0");
-            return money;
-        }
-    }
+//    public static double getGallons(double money, double price) {
+//        if (money > 0) {
+//            return money / price;
+//        } else {
+//            System.err.println("Money must be greater than 0");
+//            return money;
+//        }
+//    }
 
     public static double calculateTotalCost(double gallons, double price) {
         if (gallons > 0) {
@@ -53,7 +53,7 @@ public class GasStation {
         if (paymentType.equals("before")) {
             System.out.print("How much are you spending?\n > ");
             double money = sc.nextDouble();
-            sc.nextLine(); // CLEAR THE BUFFER
+            sc.nextLine();
 
 
             System.out.println("What grade?");
@@ -68,8 +68,9 @@ public class GasStation {
                 double gallons = money / price;
                 System.out.println("Thank you for your purchase!");
                 System.out.println("Payment: " + userInput);
-                System.out.println("Amount spent: $" + money);
-                System.out.println("Gallons purchased: " + gallons);
+                System.out.printf("Amount spent: $%.2f%n", money);
+                System.out.printf("Gallons purchased: %.2f%n", gallons);
+
             } else {
                 System.out.println("Invalid fuel grade entered.");
             }
@@ -88,15 +89,15 @@ public class GasStation {
 
             System.out.print("How many gallons of gas did you pump?\n > ");
             double gallons = sc.nextDouble();
-            sc.nextLine(); // CLEAR THE BUFFER
+            sc.nextLine();
 
             double totalPrice = calculateTotalCost(gallons, price);
 
             if (price > 0) {
                 System.out.println("Thank you for your purchase!");
                 System.out.println("Payment: " + userInput);
-                System.out.println("Amount spent: $" + totalPrice);
-                System.out.println("Gallons purchased: " + gallons);
+                System.out.printf("Amount spent: $%.2f%n", totalPrice);
+                System.out.printf("Gallons purchased: %.2f%n", gallons);
             } else {
                 System.out.println("Invalid fuel grade.");
             }

@@ -25,14 +25,6 @@ public class GasStation {
         }
     }
 
-//    public static double getGallons(double money, double price) {
-//        if (money > 0) {
-//            return money / price;
-//        } else {
-//            System.err.println("Money must be greater than 0");
-//            return money;
-//        }
-//    }
 
     public static double calculateTotalCost(double gallons, double price) {
         if (gallons > 0) {
